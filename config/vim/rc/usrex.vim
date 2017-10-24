@@ -15,7 +15,7 @@ else
 	call minpac#add('k-takata/minpac', {'type': 'opt'})
 	call minpac#add('vim-jp/vimdoc-ja')
 	call minpac#add('altercation/vim-colors-solarized')
-	call minpac#add('machakann/vim-sandwich')
+	"call minpac#add('machakann/vim-sandwich')
 
 endif
 
@@ -58,51 +58,51 @@ endif
 
 " machakann/vim-sandwich {{{1
 
-if 1
-
-	" vim-surround 風に
-	runtime macros/sandwich/keymap/surround.vim
-
-	" 追加
-	let g:sandwich#recipes += 
-				\ [ {
-				\ 'buns': ['(', ')'],
-				\ 'nesting': 1,
-				\ 'match_syntax': 1,
-				\ 'kind': ['add', 'replace'],
-				\ 'action': ['add'],
-				\ 'input': ['p']
-				\ }, {
-				\ 'buns': ['{', '}'],
-				\ 'nesting': 1,
-				\ 'match_syntax': 1,
-				\ 'kind': ['add', 'replace'],
-				\ 'action': ['add'],
-				\ 'input': ['b']
-				\ }, {
-				\ 'buns': ['[', ']'],
-				\ 'nesting': 1,
-				\ 'match_syntax': 1,
-				\ 'kind': ['add', 'repqace'],
-				\ 'action': ['add'],
-				\ 'input': ['s']
-				\ }, {
-				\ 'buns': ["'", "'"],
-				\ 'nesting': 1,
-				\ 'match_syntax': 1,
-				\ 'kind': ['add', 'repqace'],
-				\ 'action': ['add'],
-				\ 'input': ['q']
-				\ }, {
-				\ 'buns': ['"', '"'],
-				\ 'nesting': 1,
-				\ 'match_syntax': 1,
-				\ 'kind': ['add', 'replace'],
-				\ 'action': ['add'],
-				\ 'input': ['Q']
-				\ } ]
-
-endif
+"if 1
+"
+"	" vim-surround 風に
+"	runtime macros/sandwich/keymap/surround.vim
+"
+"	" 追加
+"	let g:sandwich#recipes += 
+"				\ [ {
+"				\ 'buns': ['(', ')'],
+"				\ 'nesting': 1,
+"				\ 'match_syntax': 1,
+"				\ 'kind': ['add', 'replace'],
+"				\ 'action': ['add'],
+"				\ 'input': ['p']
+"				\ }, {
+"				\ 'buns': ['{', '}'],
+"				\ 'nesting': 1,
+"				\ 'match_syntax': 1,
+"				\ 'kind': ['add', 'replace'],
+"				\ 'action': ['add'],
+"				\ 'input': ['b']
+"				\ }, {
+"				\ 'buns': ['[', ']'],
+"				\ 'nesting': 1,
+"				\ 'match_syntax': 1,
+"				\ 'kind': ['add', 'repqace'],
+"				\ 'action': ['add'],
+"				\ 'input': ['s']
+"				\ }, {
+"				\ 'buns': ["'", "'"],
+"				\ 'nesting': 1,
+"				\ 'match_syntax': 1,
+"				\ 'kind': ['add', 'repqace'],
+"				\ 'action': ['add'],
+"				\ 'input': ['q']
+"				\ }, {
+"				\ 'buns': ['"', '"'],
+"				\ 'nesting': 1,
+"				\ 'match_syntax': 1,
+"				\ 'kind': ['add', 'replace'],
+"				\ 'action': ['add'],
+"				\ 'input': ['Q']
+"				\ } ]
+"
+"endif
 
 " }}}1
 

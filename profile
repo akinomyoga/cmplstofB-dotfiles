@@ -74,6 +74,10 @@ if [ -d "${XDG_CONFIG_HOME}" ]; then
 	#	export LESSKEY
 	#	\lesskey $LESSKEY
 	#fi
+	GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
+	test -f "${GTK_RC_FILES}" && export GTK_RC_FILES
+	GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+	test -f "${GTK2_RC_FILES}" && export GTK2_RC_FILES
 	XCOMPOSEFILE="${XDG_CONFIG_HOME}/X11/xcompose"
 	export XCOMPOSEFILE
 	MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
@@ -119,21 +123,23 @@ fi
 
 # }}}3
 
-# XDG_RUNTIME_DIR {{{3
+# XDG_RUNTIME_DIR:  利用者用の一時ディレクトリ {{{3
 
-if [ -d "${XDG_RUNTIME_DIR}/X11" ]; then
-	command -p mkdir --parents "${XDG_RUNTIME_DIR}/X11"
-	XAUTHORITY="${XDG_RUNTIME_DIR}/X11/iceauthority"
+test ! -d "${XDG_RUNTIME_DIR}/X11" && command -p mkdir "${XDG_RUNTIME_DIR}/X11"
+#command -p mkdir --parents "${XDG_RUNTIME_DIR}/X11"
+test -d "${XDG_RUNTIME_DIR}/X11" && {
+	XAUTHORITY="${XDG_RUNTIME_DIR}/X11/xauthority"
 	export XAUTHORITY
 	ICEAUTHORITY="${XDG_RUNTIME_DIR}/X11/iceauthority"
 	export ICEAUTHORITY
 	RXVT_SOCKET="${XDG_RUNTIME_DIR}/X11/urxvtd"
 	export RXVT_SOCKET
-fi
+}
 
 # }}}3
 
-# TeXLive (2017) 関係
+# TeXLive (2017) 関係 {{{3
+
 type tex > /dev/null 2>&1 && {
 	TEXLIVE_VERSION='2017'
 	TEXDIR="/usr/local/share/tug/tl/${TEXLIVE_VERSION}"
@@ -152,12 +158,15 @@ type tex > /dev/null 2>&1 && {
 	test -f "${TEXMFVAR}" && export TEXMFVAR
 }
 
+# }}}3
+
 # }}}2
 
 # }}}1
 
-# 起動しているシェルを判定し，設定を読み込む
-case `\ps --no-headers --format='args' $$` in
+# 起動しているシェルを判定し，設定を読み込む {{{1
+
+case `command -p ps --no-headers --format='args' $$` in
 	*bash*)
 		BASHRC="${XDG_CONFIG_HOME}/bash/init.bash"
 		if [ -f "${BASHRC}" ]; then
@@ -177,5 +186,7 @@ case `\ps --no-headers --format='args' $$` in
 	*)
 		;;
 esac
+
+# }}}1
 
 # vim: ft=sh

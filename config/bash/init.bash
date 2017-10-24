@@ -209,6 +209,7 @@ function C () {
 # }}}2
 
 # 別名 {{{2
+
 shopt -s expand_aliases
 unalias -a
 alias cls='\command -p clear'
@@ -233,6 +234,7 @@ alias cbcp='\command -p xsel --clipboard --input --logfile "${XDG_CACHE_HOME}/xs
 alias cbpt='\command -p xsel --clipboard --output --logfile "${XDG_CACHE_HOME}/xsel.log"'
 # 履歴等を残さずに退去
 alias quit='\command -p kill -9 $$'
+
 # }}}2
 
 } #}}}1
