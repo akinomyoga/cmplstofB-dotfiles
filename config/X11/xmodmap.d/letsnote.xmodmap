@@ -1,0 +1,21 @@
+clear     lock
+remove control = Control_L
+remove control = Control_R
+remove    mod1 = Alt_R
+remove    mod1 = Meta_R
+remove    mod4 = Super_R
+!remove    mod5 = Mode_switch
+keycode     66 = Escape NoSymbol Escape
+keycode    102 = Control_L Control_L Control_L Control_L
+keycode    100 = Control_R Control_R Control_R Control_R
+keycode    101 = Alt_R Meta_R Alt_R Meta_R
+keycode    135 = Super_R NoSymbol Super_R
+keycode     19 = 0 underscore 0 underscore
+keycode     97 = backslash bar backslash bar
+add    control = Control_L
+add    control = Control_R
+add       mod1 = Alt_R
+add       mod1 = Meta_R
+add       mod4 = Super_R
+!add       mod5 = Mode_switch
+

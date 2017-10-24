@@ -1,0 +1,37 @@
+$include /etc/inputrc
+
+set output-meta on
+set input-meta on
+set convert-meta off
+
+set bell-style none
+
+set echo-control-characters on
+
+set completion-query-items 150
+set show-all-if-unmodified off
+set show-all-if-ambiguous on
+
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+"\C-p":history-search-backward
+"\C-n":history-search-forward
+
+# Bash 個別の設定 {{{
+$if Bash
+	set keyseq-timeout 1
+
+	space: magic-space
+
+	set expand-tilde off
+	set completion-ignore-case on
+
+	set editing-mode vi
+	$if mode=vi
+		set show-mode-in-prompt on
+		set vi-ins-mode-string "\1\e[5 q\2"
+		set vi-cmd-mode-string "\1\e[2 q\2"
+	$endif
+$endif
+# }}}
+

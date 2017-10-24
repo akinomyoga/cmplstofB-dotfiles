@@ -1,0 +1,11 @@
+type ibus > /dev/null 2>&1 && {
+	export XMODIFIERS="@im=ibus"
+	export XMODIFIER="@im=ibus"
+	export GTK_IM_MODULE="ibus"
+	export QT_IM_MODULE="xim"
+}
+command -p ibus-daemon --daemonize --xim --replace --timeout=900
+command -p xmodmap "${XDG_CONFIG_HOME}/X11/Xmodmap"
+command -p xrdb "${XDG_CONFIG_HOME}/X11/Xresources"
+
+# vim: ft=sh

@@ -1,0 +1,5 @@
+XTerm*termName:	xterm-256color
+XTerm*locale:	true
+XTerm*faceName:	FontForYou Mono Discord:style=regular:antialias=true
+XTerm*faceSize:	12
+

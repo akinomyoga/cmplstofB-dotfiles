@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=0.1
+Name=Xfsettingsd
+Comment=Exec Xprofile
+Comment[ja]=Xprofile を実行する
+Exec=sh -c 'source "${XDG_CONFIG_HOME}/X11/Xprofile"'
+Icon=applications-utilities
+Terminal=false
+Type=Application
+StartupNotify=false
+

@@ -1,0 +1,93 @@
+= My Dotfiles =
+cmplstofB
+v0.1, 2017-10-17
+
+[ Locale: **Default** | :jp: link:./README.ja-JP.adoc[日本 (日本語)] ]
+
+A set of configuration files for my *NIX CLI/GNI Desktop.
+
+== Description ==
+
+The application softwares in *NIX System use “__dotfiles__” in the home directory (e.g.  link:https://www.gnu.org/software/bash/[GNU Bash] uses `~/.bashrc` as its configuration file by default).
+
+Configurations of the dotfiles are essential for the better *NIX-life.
+__My Dotfiles__ helps me to make the best environment of *NIX CLI/GUI Desktop for me.
+
+== Demo ==
+
+[.small]#To be prepared.#
+
+== VS. ==
+
+Ordinary dotfiles::
+	Conforming to the link:https://specifications.freedesktop.org/basedir-spec/latest/[XDG Base Directory Specification]
+	Few “directory dotfiles”---file under the home directory like `~/.foorc`.
+
+== Requirement ==
+
+* link:https://www.gnu.org/software/coreutils/coreutils.html[GNU core utilities] at laest version 8.27
+* link:https://www.gnu.org/software/make/[GNU make] at least version 4.2.0
+* Git
+* link:https://www.freedesktop.org/wiki/Software/xdg-user-dirs/[XDG User Directory] at least version 0.15
+* wget
+* iBus
+* May be some other application softwares.
+
+---
+
+For daily use, you need additionaly;
+
+* link:https://github.com/andreafrancia/trash-cli/[Trash CLI]
+* link:https://github.com/akinomyoga/ble.sh/[Bash Line Editor]
+
+== Installation ==
+
++++1.+++ Clone this repository into your local storage.
+
+[source, console]
+----
+$ \git clone 'https://github.com/cmplstofB/dotfiles'
+----
+
++++2.+++ Go to the top directory of cloned repository.
+
+[source, console]
+----
+$ \cd ./dotfiles
+----
+
++++3.+++ Run `make` command specifing the targets footnote:[If the target does not specifiesed, `make help` will run.].
+
+[source, console]
+----
+$ \make TARGET
+----
+
+== Usage ==
+
+You can lead an ordinary life with *NIX!
+
+---
+
+== Contribution ==
+
+I am sorry but your cannot contribute this repository at now.
+
+But you can pull requeste it.
+
+== License ==
+
+image:http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png[link="http://www.wtfpl.net/", title="WTFPL"] &copy; 2017 link:https://github.com/cmplstofB[@cmplstofB] licensed under the link:http://www.wtfpl.net[WTFPL].
+
+Also see:  link:./LICENSE.txt[LISENSE.txt]
+
+---
+
+== Author ==
+
+link:https://github.com/cmplstofB[@cmplstofB]
+
+=== Tanks ===
+
+* link:https://github.com/akinomyoga[@akinomyoga]---He fixed link:https://github.com/cmplstofB/dotfiles/blob/master/config/bash/init.bash[Bash configuration file]
+

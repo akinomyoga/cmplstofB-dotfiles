@@ -1,0 +1,95 @@
+= My Dotfiles =
+cmplstofB
+v0.1, 2017-10-17
+
+[ 言語: link:./README.adoc[規定] | :jp: **日本 (日本語)** ]
+
+私の *NIX CLI/GNI Desktop 向け設定ファイル集。
+
+== 解説 ==
+
+*NIX System のソフトウェアアプリケーションはホームディレクトリ配下の “__dotfiles__” と呼ばれるファイルによって設定されます (例:  link:https://www.gnu.org/software/bash/[GNU Bash] は標準で `~/.bashrc` を設定ファイルとします)。
+
+良好な *NIX 生活には良好な設定ファイルが必要不可欠です。
+私は __My Dotfiles__ で素敵な *NIX の CLI 及び GUI Desktop の環境を手に入れました。
+
+== 動作風景 ==
+
+[.small]#準備中#
+
+== 比較 ==
+
+普通の dotfiles::
+	link:https://specifications.freedesktop.org/basedir-spec/latest/[XDG Base Directory 仕様] に準拠しています。
+	〝直置き dotfiles〟---ホームディレクトリ以下にある `~/.foorc` のようなファイル---がとても少ないです。
+
+== 要件 ==
+
+* link:https://www.gnu.org/software/coreutils/coreutils.html[GNU core utilities] at laest version 8.27
+* link:https://www.gnu.org/software/make/[GNU make] at least version 4.2.0
+* Git
+* link:https://www.freedesktop.org/wiki/Software/xdg-user-dirs/[XDG User Directory] at least version 0.15
+* wget
+* iBus
+* 恐らくその他に幾つか
+
+---
+
+日常的に利用するには更に，
+
+* link:https://github.com/andreafrancia/trash-cli/[Trash CLI]
+* link:https://github.com/akinomyoga/ble.sh/[Bash Line Editor]
+
+等が必要です。
+
+== 導入方法 ==
+
++++1.+++ 手元に本電子倉庫を複製して下さい。
+
+[source, console]
+----
+$ \git clone 'https://github.com/cmplstofB/dotfiles'
+----
+
++++2.+++ 複製した電子倉庫の最上部に移動して下さい。
+
+[source, console]
+----
+$ \cd ./dotfiles
+----
+
++++3.+++ `make` 命令を目的別に走らせて下さい footnote:[もしも何の指定もなければ `make help` が実行されます]。
+
+[source, console]
+----
+$ \make 目的
+----
+
+== 利用 ==
+
+普通の *NIX 生活を送れます！
+
+---
+
+== 参加 ==
+
+申し訳ありませんが，現在は参加できません。
+
+しかし要求があれば慶んで受け付けます。
+
+== 著作権 ==
+
+image:http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png[link="http://www.wtfpl.net/", title="WTFPL"] &copy; 2017 link:https://github.com/cmplstofB[@cmplstofB] licensed under the link:http://www.wtfpl.net[WTFPL].
+
+こちらも参照下さい:  link:./LICENSE.txt[LISENSE.txt]
+
+---
+
+== 著者 ==
+
+link:https://github.com/cmplstofB[@cmplstofB]
+
+=== 謝辞 ===
+
+* link:https://github.com/akinomyoga[@akinomyoga] 様---link:https://github.com/cmplstofB/dotfiles/blob/master/config/bash/init.bash[Bash configuration file] を修正して頂きました。
+

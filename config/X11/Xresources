@@ -1,0 +1,5 @@
+#include "xresources.d/term.xresources"
+#include "xresources.d/cursor.xresources"
+#include "xresources.d/xterm.xresources"
+#include "xresources.d/urxvt.xresources"
+
