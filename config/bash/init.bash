@@ -200,9 +200,17 @@ function mcd () {
 
 	exec 3>&-
 };
-function C () {
-	local _opt='LANG=POSIX'
-	local _opt='LANG=ja_JP.UTF-8'
+function __user_command/set_locale () {
+	case "$1" in
+		--posix)
+			local _opt='LANG=POSIX'
+			shift
+			;;
+		--ja-JP-UTF-8)
+			local _opt='LANG=ja_JP.UTF-8'
+			shift
+			;;
+	esac
 	\command -p env ${_opt} "$@"
 };
 
@@ -229,6 +237,9 @@ alias mdr='\command -p mkdir --verbose'
 alias rm='\command -p trash-put --verbose'
 alias era='\command -p rm --interactive=once --verbose --preserve-root'
 alias v='\command -p vim'
+# 言語切り替え
+alias P='__user_command/set_locale --posix'
+alias J='__user_command/set_locale --ja-JP-UTF-8'
 # クリップボードの利用
 alias cbcp='\command -p xsel --clipboard --input --logfile "${XDG_CACHE_HOME}/xsel.log"'
 alias cbpt='\command -p xsel --clipboard --output --logfile "${XDG_CACHE_HOME}/xsel.log"'

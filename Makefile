@@ -133,6 +133,11 @@ plank:
 	$(MDR) $(XDG_CONFIG_HOME)/plank/dock1/launchers/
 # }}}1
 
+.PHONY:	git # {{{1
+git:
+	$(MDR) $(XDG_CONFIG_HOME)/git
+# }}}1
+
 .PHONY:	readline # {{{1
 readline:
 	# 設定
