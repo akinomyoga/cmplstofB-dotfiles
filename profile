@@ -125,12 +125,12 @@ fi
 
 # XDG_RUNTIME_DIR:  利用者用の一時ディレクトリ {{{3
 
+#XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
+#export XAUTHORITY
 test ! -d "${XDG_RUNTIME_DIR}/X11" && command -p mkdir "${XDG_RUNTIME_DIR}/X11"
 #command -p mkdir --parents "${XDG_RUNTIME_DIR}/X11"
 test -d "${XDG_RUNTIME_DIR}/X11" && {
-	XAUTHORITY="${XDG_RUNTIME_DIR}/X11/xauthority"
-	export XAUTHORITY
-	ICEAUTHORITY="${XDG_RUNTIME_DIR}/X11/iceauthority"
+	ICEAUTHORITY="${XDG_RUNTIME_DIR}/X11/ICEauthority"
 	export ICEAUTHORITY
 	RXVT_SOCKET="${XDG_RUNTIME_DIR}/X11/urxvtd"
 	export RXVT_SOCKET

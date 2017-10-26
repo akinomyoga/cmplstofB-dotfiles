@@ -133,18 +133,6 @@ plank:
 	$(MDR) $(XDG_CONFIG_HOME)/plank/dock1/launchers/
 # }}}1
 
-.PHONY:	git # {{{1
-git:
-	$(MDR) $(XDG_CONFIG_HOME)/git
-# }}}1
-
-.PHONY:	readline # {{{1
-readline:
-	# 設定
-	$(MDR) $(XDG_CONFIG_HOME)/readline
-	$(LNK) $(DF_XDG_CONFIG_HOME)/readline/inputrc $(XDG_CONFIG_HOME)/readline/inputrc
-# }}}1
-
 .PHONY:	bash # {{{1
 bash:
 	# 初期化
@@ -172,11 +160,6 @@ zsh:
 	\zsh $(HOME)/.profile
 # }}}1
 
-.PHONY:	gem #{{{1
-gem:
-	$(MDR) $(XDG_DATA_HOME)/gem
-# }}}1
-
 .PHONY:	vim #{{{1
 vim:
 	# 初期化
@@ -198,12 +181,6 @@ vim:
 	#@\if \[ -f "$(XDG_CONFIG_HOME)/vim/autoload/plug.vim" ]; then\
 		#\wget 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' --verbose -O "$(XDG_CONFIG_HOME)/vim/autoload/plug.vim";\
 	#fi
-# }}}1
-
-.PHONY: misc # {{{1
-misc:
-	# wget
-	$(MDR) $(XDG_CACHE_HOME)/wget
 # }}}1
 
 .PHONY:	blesh # {{{1
@@ -230,6 +207,19 @@ skk:
 	$(MDR) $(XDG_CONFIG_HOME)/libskk/rules/ctm/keymap
 	$(LNK) $(wildcard $(DF_XDG_CONFIG_HOME)/libskk/rules/ctm/keymap/*.json) $(XDG_CONFIG_HOME)/libskk/rules/ctm/keymap/
 	\ibus restart
+# }}}1
+
+.PHONY: misc # {{{1
+misc:
+	# git
+	$(MDR) $(XDG_CONFIG_HOME)/git
+	# wget
+	$(MDR) $(XDG_CACHE_HOME)/wget
+	# gem
+	$(MDR) $(XDG_DATA_HOME)/gem
+	# GNU Readline
+	$(MDR) $(XDG_CONFIG_HOME)/readline
+	$(LNK) $(DF_XDG_CONFIG_HOME)/readline/inputrc $(XDG_CONFIG_HOME)/readline/inputrc
 # }}}1
 
 .PHONY:	test # {{{1
