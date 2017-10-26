@@ -21,15 +21,7 @@ DF_XDG_CONFIG_HOME	= $(DFROOT)/config
 all: profile 
 # }}}1
 
-.PHONY:	dply # {{{1
-dply:
-# }}}1
-
-.PHONY:	profile # {{{1
-profile:
-	$(LNK) "$(DFROOT)/profile" "$(HOME)/.profile"
-	$(SHELL) "$(HOME)/.profile"
-# }}}1
+# Downlodad
 
 .PHONY:	getxtheme # {{{1
 getxtheme:
@@ -73,6 +65,18 @@ getfont:
 		\unzip ./ipaex.zip
 # }}}1
 
+# Dply
+
+.PHONY:	dply # {{{1
+dply:
+# }}}1
+
+.PHONY:	profile # {{{1
+profile:
+	$(LNK) "$(DFROOT)/profile" "$(HOME)/.profile"
+	$(SHELL) "$(HOME)/.profile"
+# }}}1
+
 .PHONY:	xdg # {{{1
 xdg:
 	$(MDR) $(HOME)/.config
@@ -113,11 +117,6 @@ x11:
 	#$(MDR) $(XDG_CONFIG_HOME)/X11/xmodmap.d
 	$(LNK) $(DF_XDG_CONFIG_HOME)/X11/xmodmap.d/$(PCTYPE).xmodmap $(XDG_CONFIG_HOME)/X11/Xmodmap
 	\xmodmap $(XDG_CONFIG_HOME)/X11/Xmodmap
-# }}}1
-
-.PHONY:	gpg # {{{1
-gpg:
-	$(MDR) $(XDG_CONFIG_HOME)/gnupg
 # }}}1
 
 .PHONY:	pulse # {{{1
@@ -183,19 +182,6 @@ vim:
 	#fi
 # }}}1
 
-.PHONY:	blesh # {{{1
-blesh:
-	# だめ。これ何一つ成功しない。
-	# 取得もしくは更新
-	#@\if \[ -d "$(XDG_DATA_HOME)/blesh/.git" ]; then\
-	#	\git --git-dir="$(XDG_DATA_HOME)/blesh/.git" --work-tree="$(XDG_DATA_HOME)/blesh" pull;\
-	#else\
-	#	\echo 'ble.sh を GitHub から取得します。';\
-	#	\git clone --branch support-vi-mode 'https://github.com/akinomyoga/ble.sh.git' "$(XDG_DATA_HOME)/blesh";\
-	#fi
-	#\make --makefile="$(XDG_DATA_HOME)/blesh/Makefile"
-# }}}1
-
 .PHONY:	skk # {{{1
 skk:
 	# iBus SKK
@@ -220,6 +206,8 @@ misc:
 	# GNU Readline
 	$(MDR) $(XDG_CONFIG_HOME)/readline
 	$(LNK) $(DF_XDG_CONFIG_HOME)/readline/inputrc $(XDG_CONFIG_HOME)/readline/inputrc
+	# GPG
+	$(MDR) $(XDG_CONFIG_HOME)/gnupg
 # }}}1
 
 .PHONY:	test # {{{1
