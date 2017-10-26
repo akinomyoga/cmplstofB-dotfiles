@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 " ファイル全体の挙動 {{{1
+
 " 文字符号処理
 setglobal fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis,cp932,cp20932
 " 改行形式
@@ -21,6 +22,7 @@ else
 	let $VIMRUNTIME = '/usr/share/vim/vim80'
 endif
 set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIMRUNTIME,$VIM/vimfiles,$VIM/vimfiles/after
+
 " }}}1
 
 " 情報の保存 {{{1
