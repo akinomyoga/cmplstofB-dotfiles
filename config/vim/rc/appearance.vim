@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 " 編集時 {{{1
+
 " 不可視文字 {{{
 if exists('$DISPLAY')
 	set list
@@ -18,9 +19,11 @@ setglobal emoji
 " タブ {{{
 setglobal showtabline=2
 " }}}
+
 " }}}1
 
 " 編集子 {{{
+
 if exists('$DISPLAY')
 	if exists('$TMUX')
 		let &t_ti = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
@@ -52,6 +55,7 @@ augroup ShowCursorPosition
 	autocmd CursorHold,CursorHold,WinLeave * setlocal cursorline
 	autocmd CursorHold,CursorHold,WinLeave * setlocal cursorcolumn
 augroup END
+
 " }}}
 
 " 構文強調 {{{

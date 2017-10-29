@@ -240,7 +240,7 @@ alias cp='\command -p cp --recursive --interactive --verbose'
 alias mdr='\command -p mkdir --verbose'
 alias rm='\command -p trash-put --verbose'
 alias era='\command -p rm --interactive=once --verbose --preserve-root'
-alias v='\command -p vim'
+alias v='\command -p gvim -v'
 # 言語切り替え
 alias P='__user_command/set_locale --posix'
 alias J='__user_command/set_locale --ja-JP-UTF-8'
