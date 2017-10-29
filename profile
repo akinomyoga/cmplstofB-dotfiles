@@ -14,8 +14,13 @@ PATH='/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin'
 export PATH
 
 # langage
-LANG='ja_JP.UTF-8'
-export LANG
+if [ -z ${DISPLAY} ]; then
+	LANG='POSIX'
+	export LANG
+else
+	LANG='ja_JP.UTF-8'
+	export LANG
+fi
 
 # editors
 PAGER='less'

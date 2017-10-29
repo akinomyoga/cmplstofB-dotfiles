@@ -1,8 +1,13 @@
 scriptencoding utf-8
+
 " 編集時 {{{1
 " 不可視文字 {{{
-set list
-set listchars=eol:⏎,tab:>\ ,space:␣
+if exists('$DISPLAY')
+	set list
+	set listchars=eol:⏎,tab:>\ ,space:␣
+else
+	set nolist
+endif
 " }}}
 
 " 文字幅 {{{
@@ -16,24 +21,26 @@ setglobal showtabline=2
 " }}}1
 
 " 編集子 {{{
-if exists('$TMUX')
-	let &t_ti = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
-	let &t_te = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
-	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[5 q\<Esc>\\"
-	let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
-	let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
-elseif &term =~ "screen."
-	let &t_ti = "\<Esc>P\<Esc>[2 q\<Esc>\\"
-	let &t_te = "\<Esc>P\<Esc>[2 q\<Esc>\\"
-	let &t_SI = "\<Esc>P\<Esc>[5 q\<Esc>\\"
-	let &t_SR = "\<Esc>P\<Esc>[4 q\<Esc>\\"
-	let &t_EI = "\<Esc>P\<Esc>[2 q\<Esc>\\"
-else
-	let &t_ti = "\<Esc>[2 q"
-	let &t_te = "\<Esc>[2 q"
-	let &t_SI = "\<Esc>[5 q"
-	let &t_SR = "\<Esc>[4 q"
-	let &t_EI = "\<Esc>[2 q"
+if exists('$DISPLAY')
+	if exists('$TMUX')
+		let &t_ti = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+		let &t_te = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+		let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[5 q\<Esc>\\"
+		let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+		let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+	elseif &term =~ "screen."
+		let &t_ti = "\<Esc>P\<Esc>[2 q\<Esc>\\"
+		let &t_te = "\<Esc>P\<Esc>[2 q\<Esc>\\"
+		let &t_SI = "\<Esc>P\<Esc>[5 q\<Esc>\\"
+		let &t_SR = "\<Esc>P\<Esc>[4 q\<Esc>\\"
+		let &t_EI = "\<Esc>P\<Esc>[2 q\<Esc>\\"
+	else
+		let &t_ti = "\<Esc>[2 q"
+		let &t_te = "\<Esc>[2 q"
+		let &t_SI = "\<Esc>[5 q"
+		let &t_SR = "\<Esc>[4 q"
+		let &t_EI = "\<Esc>[2 q"
+	endif
 endif
 set number
 set relativenumber
@@ -60,7 +67,11 @@ augroup END
 " 整形 {{{
 setglobal nolinebreak
 set formatoptions=tcomMBj
-set matchpairs+=「:」,『:』,【:】,〖:〗,〔:〕,《:》
+if expand('$LANG') == 'ja_JP.UTF-8'
+	set matchpairs=(:),{:},[:],「:」,『:』,【:】,〖:〗,〔:〕,《:》
+else
+	set matchpairs=(:),{:},[:]
+endif
 augroup FncJmpMatchChar
 	autocmd!
 	autocmd FileType c,cpp,java set matchpairs+==:;

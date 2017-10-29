@@ -36,8 +36,12 @@ if [[ $- == *i* && -f "${BLESH_BIN}" ]]; then
 	# Vim 風
 	bind 'set editing-mode vi'
 	# 鍵盤割り当て
-	#ble-bind -m vi_insert -f 'C-@' 'vi-insert/@norepeat accept-and-next'
-	#ble-bind -m vi_insert -f 'C-c' 'vi-insert/normal-mode'
+	ble-bind -m 'vi_insert' -f 'C-@' 'vi-insert/@norepeat accept-and-next'
+	ble-bind -m 'vi_insert' -f 'C-c' 'vi-insert/normal-mode'
+	ble-bind -m 'vi_insert' -f 'C-x C-m' 'accept-line'
+	ble-bind -m 'vi_insert' -f 'C-j' 'nop'
+	ble-bind -m 'vi_cmap' -f 'C-m' 'vi_cmap/accept'
+	ble-bind -m 'vi_cmap' -f 'C-j' 'nop'
 
 	# 拡張機能読み込み
 	source "$_ble_base/lib/vim-surround.sh"

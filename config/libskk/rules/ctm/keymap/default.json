@@ -1,25 +1,25 @@
 {
-    "define": {
-        "keymap": {
-            "C-c": "abort",
-            "C-g": "abort",
-            "\n": "commit-unhandled",
-            "C-m": "commit-unhandled",
-            "\b": "delete",
-            "C-h": "delete",
-            "/": "abbrev",
-            " ": "next-candidate",
-            "x": "previous-candidate",
-            "Down":"next-candidate",
-            "Up": "previous-candidate",
-            "\t": "complete",
-            "C-i": "complete",
-            ">": "special-midasi",
-            "X": "purge-candidate",
-            "C-f": "expand-preedit",
-            "C-b": "shrink-preedit",
-            "Right": "expand-preedit",
-            "Left": "shrink-preedit"
-        }
-    }
+	"define": {
+		"keymap": {
+			"C-c": "abort",
+			"C-g": "abort",
+			"\n": "commit-unhandled",
+			"C-m": "commit-unhandled",
+			"\b": "delete",
+			"C-h": "delete",
+			"/": "abbrev",
+			" ": "next-candidate",
+			"x": "previous-candidate",
+			"Down":"next-candidate",
+			"Up": "previous-candidate",
+			"\t": "complete",
+			"C-i": "complete",
+			">": "special-midasi",
+			"X": "purge-candidate",
+			"C-f": "expand-preedit",
+			"C-b": "shrink-preedit",
+			"Right": "expand-preedit",
+			"Left": "shrink-preedit"
+		}
+	}
 }

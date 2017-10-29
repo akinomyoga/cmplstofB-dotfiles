@@ -1,31 +1,31 @@
+! 巻き戻し領域を有効に
+URxvt*scrollWithBuffer:	True
+! 電鍵による文字入力で画面をその位置に更新
+URxvt*scrollTtyKeypress:	True
 ! 第二画面の巻き戻し領域を無効に
 URxvt.secondaryScreen:	1
 URxvt.secondaryScroll:	0
 URxvt.secondaryWheel:	1
 
-urxvt*geometry:	128x32
-
-urxvt*urgentOnBell:	True
-urxvt*visualBell:	False
-
+! 大きさ
+URxvt*geometry:	128x32
+! 音
+URxvt*urgentOnBell:	True
+URxvt*visualBell:	False
 ! 画面の移動
-urxvt*scrollBar:	False
-urxvt*scrollBar_right:	False
-urxvt*scrollBar_floating:	False
-urxvt*scrollBar_align:	False
+URxvt*scrollBar:	False
+URxvt*scrollBar_right:	False
+URxvt*scrollBar_floating:	False
+URxvt*scrollBar_align:	False
+URxvt*scrollstyle: plain
 ! 標準出力の更新で画面を変更しない
 URxvt*scrollTtyOutput:	False
-! 巻き戻し領域を有効に
-URxvt*scrollWithBuffer:	True
-! 電鍵による文字入力で画面をその位置に更新
-URxvt*scrollTtyKeypress:	True
-
-urxvt*loginShell: True
-
-urxvt*cursorUnderlines:	True
-urxvt*cursorBlink:	True
-
-
-urxvt*font:	xft:M+ 1mn:size=12
+! Login Shell
+URxvt*loginShell: True
+! 編集子
+URxvt*cursorUnderlines:	True
+URxvt*cursorBlink:	True
+! 書体
+URxvt*font:	xft:M+ 1mn:size=12
 
 ! vim:ft=xdefaults
