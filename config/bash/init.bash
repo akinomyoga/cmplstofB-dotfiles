@@ -26,14 +26,22 @@ if [[ $- == *i* && -f "${BLESH_BIN}" ]] && source "$BLESH_BIN" noattach; then
 	bleopt input_encoding='UTF-8'
 	# 警告音
 	bleopt edit_abell=
-	# 状態の表示
-	bleopt keymap_vi_normal_mode_name:=$'\e[1m-- NORMAL --\e[m'
 	# 通知
 	export bleopt_ignoreeof_message='Shell を終了するには `$ exit` を実行して下さい'
 
 	# 入力方式
 	# Vim 風
 	bind 'set editing-mode vi'
+
+	source "$_ble_base/keymap/vi.sh"
+	# 状態の表示
+	bleopt keymap_vi_normal_mode_name=$'\e[1m-- NORMAL --\e[m'
+	# 状態毎のカーソル
+	bleopt term_vi_nmap="${_ble_term_Ss//@1/2}"
+	bleopt term_vi_imap="${_ble_term_Ss//@1/5}"
+	bleopt term_vi_omap="${_ble_term_Ss//@1/4}"
+	bleopt term_vi_xmap="${_ble_term_Ss//@1/2}"
+	bleopt term_vi_cmap="${_ble_term_Ss//@1/0}"
 	# 鍵盤割り当て (C-j は SKK 起動/平仮名態遷移に割り当てているので回避)
 	# 挿入
 	ble-bind -m 'vi_imap' -f 'C-x C-m' 'accept-line'
