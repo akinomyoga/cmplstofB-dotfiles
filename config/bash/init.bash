@@ -38,7 +38,7 @@ if [[ $- == *i* && -f "${BLESH_BIN}" ]] && source "$BLESH_BIN" noattach; then
 	# 挿入
 	ble-bind -m 'vi_imap' -f 'C-x C-m' 'accept-line'
 	# ノーマル
-	ble-bind -m 'vi_nmap' -f 'C-@' 'vi-insert/@norepeat accept-and-next'
+	ble-bind -m 'vi_nmap' -f 'C-@' 'accept-and-next'
 	ble-bind -m 'vi_nmap' -f 'C-c' 'vi-insert/normal-mode'
 	ble-bind -m 'vi_nmap' -f 'C-j' 'nop'
 	# コマンド (?)
