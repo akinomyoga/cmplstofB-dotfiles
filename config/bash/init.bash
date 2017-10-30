@@ -82,10 +82,10 @@ fi
 # Readline --- こういうのは本当は inputrc あたりで設定できるようにすべきでは？
 \tty --silent \
 	&& \stty stop undef \
-	&& \stty start undef \
-	&& \stty rprnt undef \
-	&& \stty discard undef \
-	&& \stty time 0
+	         start undef \
+	         rprnt undef \
+	         discard undef \
+	         time 0
 
 # 端末画面の自動取得
 shopt -s checkwinsize
