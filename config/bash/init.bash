@@ -17,9 +17,8 @@ BLESH_BIN="${XDG_BIN_HOME}/blesh"
 #BLESH_BIN="${XDG_DATA_HOME}/blesh/ble.sh"
 
 # 対話態かつ ble.sh 初期実行ファイルが存在していれば続いての行を実行する。
-if [[ $- == *i* && -f "${BLESH_BIN}" ]]; then
+if [[ $- == *i* && -f "${BLESH_BIN}" ]] && source "$BLESH_BIN" noattach; then
 
-	source "$BLESH_BIN" noattach
 	# ble.sh の環境設定
 	# 東欧文字幅
 	bleopt char_width_mode='west'
