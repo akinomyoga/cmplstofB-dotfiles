@@ -62,7 +62,7 @@ if [[ $- == *i* && -f "${BLESH_BIN}" ]] && source "$BLESH_BIN" noattach; then
 	# 行転写 (とりあえず)。これ実装できてんのか？ 確かめられん……。
 	function ble/widget/vi-command:t {
 		ble/widget/vi-nmap/copy-current-line
-		return 1
+		return
 	}
 
 fi
