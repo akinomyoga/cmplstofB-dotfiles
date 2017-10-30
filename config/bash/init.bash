@@ -35,11 +35,14 @@ if [[ $- == *i* && -f "${BLESH_BIN}" ]]; then
 	# 入力方式
 	# Vim 風
 	bind 'set editing-mode vi'
-	# 鍵盤割り当て
-	ble-bind -m 'vi_insert' -f 'C-@' 'vi-insert/@norepeat accept-and-next'
-	ble-bind -m 'vi_insert' -f 'C-c' 'vi-insert/normal-mode'
-	ble-bind -m 'vi_insert' -f 'C-x C-m' 'accept-line'
-	ble-bind -m 'vi_insert' -f 'C-j' 'nop'
+	# 鍵盤割り当て (C-j は SKK 起動/平仮名態遷移に割り当てているので回避)
+	# 挿入
+	ble-bind -m 'vi_imap' -f 'C-x C-m' 'accept-line'
+	# ノーマル
+	ble-bind -m 'vi_nmap' -f 'C-@' 'vi-insert/@norepeat accept-and-next'
+	ble-bind -m 'vi_nmap' -f 'C-c' 'vi-insert/normal-mode'
+	ble-bind -m 'vi_nmap' -f 'C-j' 'nop'
+	# コマンド (?)
 	ble-bind -m 'vi_cmap' -f 'C-m' 'vi_cmap/accept'
 	ble-bind -m 'vi_cmap' -f 'C-j' 'nop'
 
@@ -59,7 +62,7 @@ if [[ $- == *i* && -f "${BLESH_BIN}" ]]; then
 	#        これに関しては今どんな widget 使えばいいのか思い付かんので放置する。
 	# 行転写 (とりあえず)。これ実装できてんのか？ 確かめられん……。
 	function ble/widget/vi-command:t {
-		ble/widget/vi-command/copy-current-line
+		ble/widget/vi-nmap/copy-current-line
 		return 1
 	}
 
